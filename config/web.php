@@ -12,6 +12,13 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'siteApi' => [
+            'class' => 'mongosoft\soapclient\Client',
+            'url' => 'http://myservice.com/api/hello',
+            'options' => [
+                'cache_wsdl' => WSDL_CACHE_NONE,
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'G_-x1wEOka2YZ11IbD6kxjGOvK9ncGtd',

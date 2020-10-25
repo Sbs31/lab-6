@@ -1,8 +1,7 @@
 <?php
 
 namespace app\models;
-
-use Yii;
+    use Yii;
 
 /**
  * This is the model class for table "categories".
@@ -14,15 +13,11 @@ use Yii;
  * @property string|null $updated_at
  * @property int|null $created_by
  */
-class Server extends \yii\db\ActiveRecord
+class Server
 {
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
-        return '{{categories}}';
-    }
 
     /**
      * {@inheritdoc}
@@ -42,15 +37,15 @@ class Server extends \yii\db\ActiveRecord
     }
     public function getCategories()
     {
-        return Server::find()->all();
+        return Categories::find()->all();
     }
     public function getCategoriesId($id)
     {
-        return Server::findOne(['id'=>$id]);
+        return Categories::findOne(['id'=>$id]);
     }
     public function getCategoriesNotId($id)
     {
-        return Server::find()->where(['<>','id', $id])->asArray()->all();
+        return Categories::find()->where(['<>','id', $id])->asArray()->all();
     }
 
     public static function server()
